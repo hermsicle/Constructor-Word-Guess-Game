@@ -5,24 +5,24 @@
 //!A function that takes a character as an argument and checks it against the underlying character.
 //!letter.js should not require any other files. so we are using Module-exports in letter.js
 
-function Letter (value) {
+function Letter (value) {       //Letter constructor 
     this.letter = value;
     this.guessed = false;
 
-    this.toString = function() {
+    this.toString = function() {    //This function will determine the spaces and the blanks
         if(this.letter === " "){
             this.guessed = true;
             return " ";
         } else {
-            if (this.guessed === false){
-                return " " ;
+            if (this.guessed === false){    //This determines our guess true of false and return a blank and underline _
+                return "_" ;
             } else {
                 return this.letter;
             }
         }
     }
 
-    this.guess = function (guess) {
+    this.guess = function (guess) {         
         if(guess === this.letter) {
             this.guessed = true;
         }
